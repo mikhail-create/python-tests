@@ -1,8 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 import xlsxwriter
 
+driver = webdriver.Chrome(ChromeDriverManager().install())
 workbook = xlsxwriter.Workbook('parse_result.xlsx')
 worksheet = workbook.add_worksheet()
 
@@ -15,6 +17,7 @@ worksheet.write('B1', 'Cost', bold)
 worksheet.write('C1', 'Features', bold)
 
 url = 'https://iotvega.com/product'
+driver.get("https://iotvega.com/product")
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'lxml')
 items = soup.find_all('a', class_='main-container')
