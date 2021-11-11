@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
 url = 'https://sclouddownloader.net/'
-music = 'https://soundcloud.com/dioresly/twinky-ghoul'
+music = 'https://soundcloud.com/deltacharlie7/ya-budu-vmesto-neyo-tvoya-nevesta-glyukoza'
 driver.get(url)
 time.sleep(2)
 inputarea = driver.find_element_by_css_selector('.input-group-field')
