@@ -1,5 +1,6 @@
 import psutil
 import time
+import os
 
 disk = psutil.disk_partitions()
 i=0
@@ -28,5 +29,4 @@ while i<10:
     time.sleep(1)
 
 print("END")
-
-#termgraph stats.dat --color {yellow,magenta}
+os.system("termgraph stats.dat --color {yellow,magenta}")
